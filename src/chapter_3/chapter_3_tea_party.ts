@@ -1,3 +1,4 @@
+
 import { endAdventure } from '../..';
 import { playCroquet } from '../chapter_4/chapter_4_croquet';
 import { askQuestion, clear, print } from '../ui/console';
@@ -20,7 +21,16 @@ type Table = {
 
 function setTheTable(): Table {
 	// 👉 FIXME ❌
-	return { seats: [] };
+	const table: Table = { seats: [] };
+	for (let i = 0; i < 4; i++) {
+		table.seats.push({
+			drink: {
+				type: 'Tea',
+				poured: true,
+			},
+		});
+	}
+	return table;
 }
 
 export function attendATeaParty() {
